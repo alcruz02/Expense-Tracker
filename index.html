@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Expense Tracker with Visualization</title>
+
+  <!-- trash icon -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Link your external stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="app">
+    <header>
+      <h1>Expense Tracker</h1>
+      <button id="dark-toggle" title="Toggle Dark Mode">🌙</button>
+    </header>
+
+    <form id="transaction-form" novalidate>
+      <input type="text" id="desc" placeholder="Description" required />
+      <input type="number" id="amount" placeholder="Amount" step="0.01" required />
+      <select id="type" required>
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+      <button type="submit">Add Transaction</button>
+    </form>
+
+    <div id="summary">
+      <div>Income: <span id="total-income">₱0.00</span></div>
+      <div>Expenses: <span id="total-expense">₱0.00</span></div>
+      <div>Balance: <span id="balance">₱0.00</span></div>
+    </div>
+
+    <div id="chart-controls">
+      <label for="chartType">Chart Type:</label>
+      <select id="chartType">
+        <option value="pie">Pie</option>
+        <option value="bar">Bar</option>
+      </select>
+    </div>
+
+    <canvas id="expenseChart" width="400" height="250"></canvas>
+
+    <ul id="transaction-list"></ul>
+  </div>
+
+  <!-- External JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>

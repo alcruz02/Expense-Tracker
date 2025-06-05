@@ -1,0 +1,191 @@
+/* Reset some defaults */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f9f9f9;
+  color: #222;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#app {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+#dark-toggle {
+  font-size: 1.4rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: color 0.3s;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+form input,
+form select,
+form button {
+  padding: 12px 15px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s;
+}
+
+form input:focus,
+form select:focus {
+  outline: none;
+  border-color: #28a745;
+}
+
+form button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #218838;
+}
+
+#summary {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+#chart-controls {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+canvas {
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+ul#transaction-list {
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+ul#transaction-list li {
+  background: #f0f0f0;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+ul#transaction-list li.income {
+  border-left: 6px solid #28a745;
+  color: #155724;
+}
+
+ul#transaction-list li.expense {
+  border-left: 6px solid #dc3545;
+  color: #721c24;
+}
+
+.remove-btn {
+  background: transparent;
+  border: none;
+  color: #888;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.remove-btn:hover {
+  color: #dc3545;
+}
+
+/* Scrollbar styling for list */
+ul#transaction-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+ul#transaction-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #121212;
+  color: #eee;
+}
+
+body.dark-mode #app {
+  background: #1f1f1f;
+  box-shadow: 0 4px 15px rgb(255 255 255 / 0.1);
+}
+
+body.dark-mode form input,
+body.dark-mode form select {
+  background: #2b2b2b;
+  border-color: #444;
+  color: #eee;
+}
+
+body.dark-mode form input:focus,
+body.dark-mode form select:focus {
+  border-color: #66bb6a;
+  background: #333;
+}
+
+body.dark-mode ul#transaction-list li {
+  background: #2a2a2a;
+}
+
+body.dark-mode ul#transaction-list li.income {
+  color: #81c784;
+}
+
+body.dark-mode ul#transaction-list li.expense {
+  color: #e57373;
+}
+
+body.dark-mode .remove-btn {
+  color: #aaa;
+}
+
+body.dark-mode .remove-btn:hover {
+  color: #ef5350;
+}
